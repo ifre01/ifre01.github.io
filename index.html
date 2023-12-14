@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <title>Our Wedding</title>
 </head>
 <body>
@@ -22,7 +23,13 @@
     <section id="rsvp">
         <h2>RSVP</h2>
         <p>Please RSVP by December 15, 2023</p>
-        <!-- Add RSVP form or link here -->
+        <button id="rsvp-button">RSVP</button>
+        <form id="rsvp-form" style="display: none;">
+            <!-- RSVP 폼의 내용은 여기에 추가 -->
+        </form>
+        <div id="thank-you-message" style="display: none;">
+            Thank you for RSVPing!
+        </div>
     </section>
     <footer>
         <p>© 2023 Our Wedding</p>
