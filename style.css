@@ -1,0 +1,7 @@
+/* style.css */
+/* 기존 스타일 유지 */
+#details img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
