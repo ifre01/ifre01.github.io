@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openPopup() {
         rsvpForm.style.display = "block";
+        console.log("가윤 hello"); // 버튼을 눌렀을 때 "hello" 출력
     }
 
     function closePopup() {
