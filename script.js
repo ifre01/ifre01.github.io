@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const rsvpButton = document.getElementById("rsvp-button");
     const rsvpForm = document.getElementById("rsvp-form");
     const thankYouContainer = document.getElementById("thank-you-container");
-
+    
     if (rsvpButton && rsvpForm && thankYouContainer) {
         rsvpButton.addEventListener("click", function () {
-
+            // RSVP 폼 숨기기
+            rsvpForm.style.display = "none";
+            thankYouContainer.style.display = "block";
+            
             // "감사합니다" 문구 동적으로 생성
             const thankYouMessage = document.createElement("div");
             thankYouMessage.id = "thank-you-message";
