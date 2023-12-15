@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (rsvpButton && rsvpForm && thankYouContainer) {
         rsvpButton.addEventListener("click", function () {
-            // RSVP 폼 숨기기
-            rsvpForm.style.display = "none";
 
             // "감사합니다" 문구 동적으로 생성
             const thankYouMessage = document.createElement("div");
