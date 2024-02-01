@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    background:url 
 }
 
 header, section, footer {
@@ -30,3 +31,4 @@ footer {
     height: auto;
     margin-top: 20px;
 }
+
