@@ -1,3 +1,12 @@
+# 모든 파일과 디렉토리를 무시
 *
+
+# index.html 파일은 포함
 !index.html
+
+# style.css 파일은 포함
 !style.css
+
+# images 디렉토리와 그 내용을 포함
+!images/
+!images/*
