@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <title>Our Wedding</title>
+
+    <!-- 메타태그 hello ** -->
+    <meta property="og:title" content="명한&가윤 행복">
+    <meta property="og:description" content="명한 결혼식 축하해주세요ㅎ">
+    <meta property="og:image" content="images/happy-couple.jpg">
+
+   <!-- 파비콘 설정 -->
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+</head>
+<body>
+    <header>
+        <h1>2th Feburary 2025</h1>
+        <p>Join us as we celebrate our wedding</p>
+    </header>
+    <section id="details">
+        <h2>Wedding Details</h2>
+        <p>Date: Feburary 2, 2025</p>
+        <p>Time: 1:00 PM</p>
+        <p>Location: Beautiful Venue</p>
+        <!-- 이미지 추가 -->
+        <img src="images/ring01.jpg" alt="Wedding Venue">
+    </section>
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <p>Please RSVP by December 15, 2023</p>
+        <button id="rsvp-button">RSVP</button>
+        <form id="rsvp-form" style="display: none;">
+            <!-- RSVP 폼의 내용은 여기에 추가 -->
+            <button id="close-popup">Close</button>
+        </form>
+        <div id="thank-you-container" style="display: none;">
+            <div id="thank-you-message">Thank you for RSVPing!</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Our Wedding</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
