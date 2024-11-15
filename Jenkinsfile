@@ -37,17 +37,20 @@ pipeline {
         stage('Push to ECR') {
             steps {
                 script {
-                    // AWS ECR 로그인
-                    sh """
-                        aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${ECR_REGISTRY}
-                    """
-                    
-                    // ECR에 이미지 푸시
-                    sh "docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
+                    // AWS ECR 로그인 (비대화형 방식으로 수정)
+                    withAWS(credentials: 'aws-credentials', region: 'ap-northeast-2') {
+                        sh '''
+                            aws ecr get-login-password --region ap-northeast-2 > /tmp/ecr_password
+                            cat /tmp/ecr_password | docker login --username AWS --password-stdin ${ECR_REGISTRY}
+                            rm -f /tmp/ecr_password
+
+                            # ECR로 이미지 푸시
+                            docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+                        '''
+                    }
                 }
             }
         }
-    }
     
     post {
         always {
