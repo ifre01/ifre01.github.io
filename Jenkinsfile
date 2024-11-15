@@ -34,13 +34,14 @@ pipeline {
             steps {
                 script {
                     // AWS ECR 로그인
-                    sh "aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin ${ECR_REGISTRY}"
+                    sh "aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${ECR_REGISTRY}"
                     // ECR에 이미지 푸시
                     sh "docker push ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
                 }
             }
         }
-        
+    }
+    
     post {
         always {
             // 항상 실행되는 작업
