@@ -40,15 +40,7 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy') {
-            steps {
-                // Kubernetes에 배포 (예시, 실제 배포 명령어로 대체 필요)
-                sh "kubectl set image deployment/wedding-app wedding-container=${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
-            }
-        }
-    }
-
+        
     post {
         always {
             // 항상 실행되는 작업
