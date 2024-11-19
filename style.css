@@ -7,13 +7,13 @@ body {
     background:url 
 }
 
-header, section, footer {
+/*header, section, footer {
     background-color: #fff;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+}*/
 
 .home-page {
     margin: 30px;
@@ -21,6 +21,20 @@ header, section, footer {
     border-radius: 10px;
     background-image: url('images/page-content_home-page.png');
     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px; /* 필요에 따라 조정 */
+    /*내부 콘텐츠를 중앙에 배치*/
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.ww-section {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+        background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 500px; /* 필요에 따라 조정 */
