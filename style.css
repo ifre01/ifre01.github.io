@@ -1,3 +1,28 @@
+/*마루부리 폰트*/
+/* */
+@import url('https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css');
+
+body {
+  font-family: 'MaruBuri', serif;
+}
+
+.maru-light {
+  font-family: 'MaruBuriLight', serif;
+}
+
+.maru-regular {
+  font-family: 'MaruBuri', serif;
+}
+
+.maru-semibold {
+  font-family: 'MaruBuriSemiBold', serif;
+}
+
+.maru-bold {
+  font-family: 'MaruBuriBold', serif;
+}
+
+
 /* style.css */
 body {
     font-family: 'Arial', sans-serif;
@@ -7,42 +32,121 @@ body {
     background:url 
 }
 
-/*header, section, footer {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}*/
+
 
 .home-page {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/page-content_home-page.png') no-repeat center center;
+    background-size: cover;
+    background-position: 50% 0%; /* 상단 중앙에 위치 */
+    height: 100vh;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* <div class="ww-section" id="couple"> 클래스 내 모든 html 글씨 중앙으로 */
+#couple {
     margin: 30px;
     padding: 20px;
     border-radius: 10px;
-    background-image: url('images/page-content_home-page.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 500px; /* 필요에 따라 조정 */
-    /*내부 콘텐츠를 중앙에 배치*/
-    display: flex; 
-    align-items: center; 
+    min-height: 500px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.ww-section {
-    margin: 30px;
-    padding: 20px;
-    border-radius: 10px;
-        background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 500px; /* 필요에 따라 조정 */
-    /*내부 콘텐츠를 중앙에 배치*/
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+#couple .container {
+    text-align: center;
 }
+
+#couple .center-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#couple .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+#couple .h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+/* <div class="ww-section" id="couple"> 클래스 */
+
+/* <div class="ww-section" id="gallery""> 클래스 */
+/* 갤러리 섹션 전체 스타일 */
+#gallery {
+    padding: 50px 0; /* 위아래 여백 50px 추가 */
+}
+
+/* 갤러리 설명 스타일 */
+.ww-gallery-description {
+    margin-bottom: 30px; /* 설명과 이미지 갤러리 사이 간격 */
+}
+
+/* 갤러리 배경 스타일 */
+.ww-photo-gallery {
+    background-color: #000000; /* 연한 분홍색 배경 */ /*#eccef1*/
+    border-radius: 100px; /* 카드 모서리 둥글게 */
+    overflow: hidden; /* 내부 요소가 모서리를 벗어나지 않도록 */
+}
+
+/* 이미지 그리드 레이아웃 설정 */
+.ww-gallery .card-columns {
+    column-count: 2; /* 모바일에서 2열로 표시 */
+    column-gap: 15px; /* 열 사이 간격 15px */
+    gap: 15px; /* 그리드 아이템 사이 간격 */
+    padding: 0 5px; /* 전체 그리드의 좌우 패딩을 5px로 설정 */
+}
+
+/* 데스크톱 화면에서의 레이아웃 */
+@media (min-width: 768px) {
+    .ww-gallery .card-columns {
+        column-count: 2; /* 화면 너비가 768px 이상일 때 2열로 표시 */
+    }
+}
+
+/* 각 이미지 카드 스타일 */
+.ww-gallery .card {
+    border: none; /* 테두리 제거 */
+    margin-bottom: 15px; /* 카드 아래 여백 15px */
+    border-radius: 30px; /* 카드 모서리 둥글게 */
+    overflow: hidden; /* 내부 요소가 모서리를 벗어나지 않도록 */
+    margin-left: 5px; /* 왼쪽 여백 5px */
+    margin-right: 5px; /* 오른쪽 여백 5px */
+}
+
+/* 이미지 링크 스타일 */
+.ww-gallery .card a {
+    display: block;
+    padding-bottom: 100%; /* 정사각형 비율 유지를 위해 높이를 너비와 동일하게 설정 */
+    position: relative;
+    overflow: hidden; /* 이미지가 컨테이너를 벗어나지 않도록 설정 */
+}
+
+/* 이미지 스타일 */
+.ww-gallery .card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너를 꽉 채움 */
+    border-radius: 15px; /* 이미지 모서리 둥글게 */
+}
+
+
+
 
 h1, h2 {
     color: #333;
@@ -65,13 +169,6 @@ footer p {
     margin: 0; /* 기본 마진 제거 */
 }
 
-/*
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #777;
-}
-*/
 
 #details img {
     max-width: 100%;
