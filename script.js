@@ -1,19 +1,27 @@
-// script.js
+// 결혼식 날짜를 설정합니다. 형식: 년, 월(0-11), 일
+const weddingDate = new Date(2025, 5, 15);  // 예: 2025년 6월 15일
 
-document.addEventListener("DOMContentLoaded", function () {
-    var rsvpButton = document.getElementById("rsvp-button");
-    var closePopupButton = document.getElementById("close-popup");
-    var rsvpForm = document.getElementById("rsvp-form");
+function updateCountdown() {
+    const now = new Date();
+    const difference = weddingDate - now;
 
-    function openPopup() {
-        rsvpForm.style.display = "block";
-        console.log("가윤 hello"); // 버튼을 눌렀을 때 "hello" 출력
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById('countdown').innerHTML = 
+        `결혼식까지 <br>
+        ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다!`;
+
+    if (difference < 0) {
+        clearInterval(timer);
+        document.getElementById('countdown').innerHTML = '결혼을 축하합니다!';
     }
+}
 
-    function closePopup() {
-        rsvpForm.style.display = "none";
-    }
+// 초기 실행
+updateCountdown();
 
-    rsvpButton.addEventListener("click", openPopup);
-    closePopupButton.addEventListener("click", closePopup);
-});
+// 1초마다 업데이트
+const timer = setInterval(updateCountdown, 1000);
