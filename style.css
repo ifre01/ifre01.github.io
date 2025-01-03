@@ -35,14 +35,15 @@ body {
 
 
 .home-page {
-    margin: 0;
+    margin: 70px 70px;
     padding: 0;
+    border-radius: 10px; /* 카드 모서리 둥글게 */
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/page-content_home-page.png') no-repeat center center;
     background-size: cover;
-    background-position: 50% 0%; /* 상단 중앙에 위치 */
-    height: 100vh;
-    min-height: 500px;
-    width: 100%;
+    background-position: 50% 0%;
+    height: calc(100vh - 100px);
+    min-height: 400px;
+    width: calc(100% - 140px);
     display: flex;
     align-items: center;
     justify-content: center;
