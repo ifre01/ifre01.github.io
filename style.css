@@ -183,9 +183,9 @@ footer p {
     transition: 0.3s;
   }
   
-  .clickable-img:hover {opacity: 0.7;}
+.clickable-img:hover {opacity: 0.7;}
   
-  .modal {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -198,14 +198,14 @@ footer p {
     background-color: rgba(0,0,0,0.9);
   }
   
-  .modal-content {
+.modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
   }
   
-  .close {
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -215,8 +215,8 @@ footer p {
     transition: 0.3s;
   }
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
