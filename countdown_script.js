@@ -11,7 +11,7 @@ function updateCountdown() {
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     document.getElementById('countdown').innerHTML = 
-        `결혼식까지 <br>
+        `2025년 07월 05일 13시 20분 결혼식까지 <br>
         ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다!`;
 
     if (difference < 0) {
