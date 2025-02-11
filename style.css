@@ -1,8 +1,9 @@
 /* style.css */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'NanumSquare', sans-serif;
     margin: 0;
     padding: 0;
+    /* background-color: #cae2f0; */
     background-color: #f8f8f8;
     background:url
 }
@@ -101,13 +102,14 @@ body {
 
 .page-number {
     font-size: 16px; /* 페이지 번호 크기 설정 */
+    font-weight: bold;
     color: #333; /* 페이지 번호 색상 설정 */
     margin: 0 20px; /* 버튼과 페이지 번호 사이 간격 설정 */
 }
 
 .nav-button {
     background-color: transparent; /* ✅ 배경 투명 */
-    border: 2px solid #95a14e; /* 테두리 추가 (원하는 색상으로 변경 가능) */
+    border: 2px solid #B76E79; /* 테두리 추가 (원하는 색상으로 변경 가능) */
     color: #95a14e; /* 화살표 색상 */
     width: 40px;
     height: 40px;
@@ -164,9 +166,14 @@ body {
         border-radius: 0;
     }
 }
-
+/*
 h1, h2 {
     color: #333;
+}
+*/
+h1, h2, p {
+    color: #d8a09c; /* 아이보리 색상 */
+    font-family: 'YoonGothic', sans-serif; /* 윤고딕 예시 */
 }
 
 footer {
