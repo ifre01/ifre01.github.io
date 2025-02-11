@@ -8,6 +8,12 @@ startX: 터치 시작 위치 (모바일 스와이프)
 endX: 터치 종료 위치
 */
 
+const totalSlides = document.querySelectorAll('.slide').length;
+
+function updatePageNumber() {
+    document.getElementById('page-number').textContent = `${currentIndex + 1}/${totalSlides}`;
+}
+
 // 2. showSlide(index) 함수
 // 💡 이 함수는 버튼 클릭, 스와이프 시 공통적으로 사용됨!
 // → 즉, 버튼을 누르든, 손가락을 스와이프하든 결국 이 함수가 호출되어 슬라이드 이동 🚀
@@ -22,7 +28,11 @@ function showSlide(index) {
         currentIndex = index; // 정상적인 경우 index 업데이트
     }
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updatePageNumber();  // 페이지 번호 갱신
 }
+
+// 페이지 번호 초기화
+updatePageNumber();
 
 /*
 역할
