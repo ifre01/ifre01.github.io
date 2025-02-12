@@ -1,3 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+/* 스크롤 안내 섹션 */
+.intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 전체 창문 덮개 */
+.full-screen-wrapper {
+    position: absolute; /* fixed → absolute 로 변경 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 1000; /* 다른 요소들 위에 오도록 설정 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+
+
+/* 창문이 열리면 visible 상태로 변경됨 */
+.full-screen-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s;
+}
+
+/* 왼쪽 창문 */
+.full-window-left, 
+.full-window-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #dcdcdc, #ffffff);
+    transition: transform 1.2s ease-in-out;
+}
+
+/* 창문 초기 상태 */
+.full-window-left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.full-window-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* 창문이 열린 상태 */
+.full-screen-wrapper.open .full-window-left {
+    transform: translateX(-100%); /* 왼쪽 창문은 왼쪽으로 이동 */
+}
+
+.full-screen-wrapper.open .full-window-right {
+    transform: translateX(100%); /* 오른쪽 창문은 오른쪽으로 이동 */
+}
+
+/* 초대장 내용 */
+.invitation-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* 처음엔 안 보이도록 설정 */
+    transition: opacity 1.2s ease-in-out;
+}
+
+.invitation-text {
+    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
+    font-size: 1.2rem; /* 글씨 크기 적절히 조정 */
+    font-weight: 800; /* 너무 두껍지 않은 기본 굵기 */
+    color: #4a4a4a; /* 부드러운 다크 그레이 컬러 */
+    line-height: 1.8; /* 줄 간격 넉넉하게 */
+    text-align: center; /* 중앙 정렬 */
+    max-width: 600px; /* 가독성을 위한 최대 너비 */
+    margin: 30px auto; /* 상하 여백 및 중앙 정렬 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* 연한 배경색 추가 */
+    border-radius: 12px; /* 부드러운 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 은은한 그림자 효과 */
+}
+
+/* 스크롤 시 창문 열리는 효과 */
+.full-screen-wrapper.open .full-window-left {
+    transform: translateX(-100%);
+}
+
+.full-screen-wrapper.open .full-window-right {
+    transform: translateX(100%);
+}
+
+.full-screen-wrapper.open .invitation-content {
+    opacity: 1;
+}
+
 /* style.css */
 body {
     font-family: 'NanumSquare', sans-serif;
