@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(to right, #f8c8d8, #a8d0e6); /* 파스텔 핑크에서 파스텔 블루로 그라데이션 */
+    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
 }
 
 .intro h1 {
@@ -93,6 +94,7 @@
     text-align: center;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
+    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
 }
 
 
