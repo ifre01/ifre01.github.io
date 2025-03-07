@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <title>명한 결혼식</title>
 
@@ -36,6 +38,7 @@
     </section>
 
     <!-- 창문과 초청장 -->
+    <!-- style-windows.css -->
     <div class="full-screen-wrapper">
         <div class="full-window-left"></div>
         <div class="full-window-right"></div>
@@ -46,13 +49,14 @@
             <p>📅 날짜: 2025년 07월 05일 13:20 PM </p>
             <p>📍 장소: <a href="https://naver.me/53lK4SBz" target="_blank">웨스턴베니비스 신도림 OO홀</a></p>
                 <div id="countdown">
-                    <script src="./countdown_script.js"></script>
+                    <script src="./javascript_folder/countdown_script.js"></script>
                 </div>
         </div>
     </div>
 
-    <script src="screen.js"></script>
+    <script src="./javascript_folder/screen.js"></script>
 
+    <!-- style-invitation.css -->
     <div class="page-content">
         <div class="div">
             
@@ -74,6 +78,26 @@
                 </p>
             </section>
             
+            <div class="weddinghall-map" id="map">
+                <h2>우리 결혼식장 오는 길</h2>
+
+                <!-- 네이버 지도 앱으로 길찾기 -->
+                <a href="nmap://route/walk?slat=37.5665&slng=126.9780&sname=내위치&dlat=37.4979&dlng=127.0276&dname=결혼식장" 
+                   style="display: inline-block; padding: 10px 15px; background-color: #2DB400; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+                    네이버 지도 앱으로 길찾기 🚶‍♂️
+                </a>
+            
+                <br><br>
+            
+                <!-- 네이버 웹 지도 링크 -->
+                <a href="https://map.naver.com/p/entry/place/1682609237?c=15.00,0,0,0,dh" 
+                   target="_blank"
+                   style="display: inline-block; padding: 10px 15px; background-color: #0073CF; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+                    네이버 웹 지도로 길찾기 🌍
+                </a>
+    
+    
+                </div>
 
 
             <div class="ww-section" id="gallery">
@@ -93,7 +117,7 @@
                         </div>
                         
                     </div>
-                    <script src="image-slide_script.js"></script>
+                    <script src="/javascript_folder/image-slide_script.js"></script>
 
 
             </div>
