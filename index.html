@@ -80,10 +80,16 @@
             <div class="weddinghall-map" id="map">
                 <h2>결혼식장 오시는 길</h2>
                 <!-- 지도 앱으로 길찾기 -->
-                <div id="map-container">
-                    <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&center=126.890270,37.507098&level=16&uf5u3idq5s={jdmgANI4Ay5AdgXIJ8YNK7wV1fGUZB9ybKIwCEVN}"
-                         alt="웨스턴베니비스 신도림 지도">
-                </div>
+                <div id="map-container" style="width:100%;height:400px;"></div>
+                <script>
+                  var mapOptions = {
+                    center: new naver.maps.LatLng(37.507098, 126.890270),
+                    zoom: 16
+                  };
+                
+                  var map = new naver.maps.Map('map-container', mapOptions);
+                </script>
+                
 
                 <!-- 네이버 맵 버튼 -->
                 <a id="naverMapLink">
