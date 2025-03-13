@@ -85,27 +85,6 @@
     opacity: 1;
 }
 
-/* style.css */
-body {
-    /* font-family: 'NanumSquare', sans-serif; */
-    font-family: 'Gowun Batang', serif;
-    margin: 0;
-    padding: 0;
-    /* background-color: #cae2f0; */
-    background-color: #f8f8f8;
-    background:url
-}
-
-/* 초청장 아래 추가 콘텐츠 */
-.content-after {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    padding: 50px;
-}
 /* 반응형 스타일 - 모바일 최적화 */
 @media (max-width: 480px) {
     .invitation-content {
