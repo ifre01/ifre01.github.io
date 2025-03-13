@@ -79,18 +79,20 @@
 
             <div class="weddinghall-map" id="map">
                 <h2>결혼식장 오는 길</h2>
-                <!-- 네이버 지도 앱으로 길찾기 -->
-                <a href="nmap://route/walk?slat=37.5665&slng=126.9780&sname=내위치&dlat=37.4979&dlng=127.0276&dname=결혼식장" 
-                style="display: inline-block; padding: 10px 15px; background-color: #2DB400; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
-                네이버 지도 앱으로 길찾기 🚶‍♂️
-                </a>        
+                <!-- 지도 앱으로 길찾기 -->
+                <!-- 네이버 맵 버튼 -->
+                <a id="naverMapLink">
+                    <img src="naver-map-logo.png" alt="네이버지도에서 보기" width="50">
+                </a>
+                <!-- 네이버 맵 JavaScript 연결 -->
+                <script src="./javascript_folder/naver-map.js"></script>
                     <br><br>
                 <!-- 카카오맵 버튼 -->
                 <a id="kakaoMapLink">
                     <img src="./images/kakao-map-logo.png" alt="카카오맵으로 보기" width="50">
                 </a>
-                <!-- JavaScript 연결 -->
-                <script src="./javascript_folder/kakao.js"></script>
+                <!-- 카카오 맵 JavaScript 연결 -->
+                <script src="./javascript_folder/kakao-map.js"></script>
             </div>
 
 
