@@ -12,9 +12,9 @@
 }
 
 .intro h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #333333; /* 다크 그레이, 시인성 높음 */
 }
 
@@ -22,6 +22,7 @@
     font-size: 1.2rem;
     margin: 10px 0;
     color: #333333; /* 다크 그레이, 시인성 높음 */
+    line-height: 1.6; /* 가독성 향상 */
 }
 
 /* 전체 창문 덮개 */
@@ -104,4 +105,19 @@ body {
     justify-content: center;
     background-color: #fff;
     padding: 50px;
+}
+/* 반응형 스타일 - 모바일 최적화 */
+@media (max-width: 480px) {
+    .invitation-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
 }
