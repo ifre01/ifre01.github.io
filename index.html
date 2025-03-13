@@ -80,51 +80,64 @@
             <div class="weddinghall-map" id="map">
                 <h2>결혼식장 오시는 길</h2>
 
-                <!-- Static Map (API 필요 없음) -->
-                <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster?w=300&h=300&center=126.890270,37.507098&level=16&markers=type:d|size:mid|pos:126.890270 37.507098"
-                     alt="웨스턴베니비스 신도림 지도"
-                     referrerpolicy="no-referrer">
-
                 <!-- 동적 네이버 지도 -->
                 <div id="map-container" style="width:100%;height:400px;"></div>
 
                 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uf5u3idq5s"></script>
                 <script>
-                    var mapOptions = {
+                    var WesternBennevis = {
                         center: new naver.maps.LatLng(37.507098, 126.890270), // 지도 중심 좌표
-                        zoom: 16
+                        zoom: 17,
+                        minZoom: 8, //지도의 최소 줌 레벨
+                        zoomControl: true, //줌 컨트롤의 표시 여부
+                        zoomControlOptions: { //줌 컨트롤의 옵션
+                            position: naver.maps.Position.TOP_RIGHT
+                            }
                     };
                 
-                    var map = new naver.maps.Map('map-container', mapOptions);
+                    var map = new naver.maps.Map('map-container', WesternBennevis);
                 
                     // 마커 추가
                     var marker = new naver.maps.Marker({
                         position: new naver.maps.LatLng(37.507098, 126.890270),
                         map: map
                     });
-                
-                    // 마커 위에 표시할 텍스트 (Custom Overlay 사용)
-                    var label = new naver.maps.CustomOverlay({
-                        position: new naver.maps.LatLng(37.507098, 126.890270), // 마커 위치와 동일
-                        content: `
-                            <div style="
-                                background: white;
-                                padding: 5px 10px;
-                                border-radius: 5px;
-                                border: 1px solid #ddd;
-                                font-size: 14px;
-                                font-weight: bold;
-                                color: #333;
-                                text-align: center;
-                                white-space: nowrap;
-                                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-                                transform: translate(-50%, -100%);
-                            ">
-                                웨스턴베니비스 신도림
-                            </div>
-                        `,
-                        map: map
+                    
+                    // 📌 3. 정보창(Infowindow) 생성
+                    var contentString = [
+                        '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 260px; height: 60px; text-align: center;">',
+                        '   <p style="foint-size: 2rem; margin: 0;">웨스턴베니비스</p>',
+                        '   <p style="font-size: 0.8rem; margin: 0;">서울 구로구 새말로 97 신도림테크노마트 7층</p>',
+                        '</div>'
+                    ].join('');
+                    
+                    // 🎨 정보창 스타일 지정
+                    var infowindow = new naver.maps.InfoWindow({
+                        content: contentString, // 위에서 만든 HTML 내용
+                        maxWidth: 250,
+                        height: 60,
+                        backgroundColor: "rgba(255, 255, 255, 0.3)", // ✅ 배경 반투명 적용 (80% 불투명)
+                        // borderColor: "black", // 테두리 색상
+                        borderColor: "#555555", // 테두리 색상 (파스텔 차콜: #555555)
+                        borderWidth: 2, // 테두리 두께
+                        borderRadius: "10px", // ✅ 테두리를 둥글게 만들기
+                        disableAnchor: true, // 말풍선 삼각형 제거
+                        textAlign: "center", // 텍스트 중앙 정렬
+                        margin: "auto", // 마진 자동 조정
+                        pixelOffset: new naver.maps.Point(0, -5) // 정보창 위치 조정 (마커 위로 이동)
                     });
+                    
+                    // 📌 마커 클릭 시 정보창 열기/닫기
+                    naver.maps.Event.addListener(marker, "click", function(e) {
+                        if (infowindow.getMap()) { // 정보창이 열려 있으면
+                            infowindow.close(); // 닫기
+                        } else {
+                            infowindow.open(map, marker); // 마커 위에 정보창 열기
+                        }
+                    });
+
+                    // 지도 로드 시 자동으로 정보창 열기
+                    infowindow.open(map, marker);
                 </script>
                 
                 
