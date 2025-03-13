@@ -79,16 +79,54 @@
 
             <div class="weddinghall-map" id="map">
                 <h2>결혼식장 오시는 길</h2>
-                <!-- 지도 앱으로 길찾기 -->
+
+                <!-- Static Map (API 필요 없음) -->
+                <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster?w=300&h=300&center=126.890270,37.507098&level=16&markers=type:d|size:mid|pos:126.890270 37.507098"
+                     alt="웨스턴베니비스 신도림 지도"
+                     referrerpolicy="no-referrer">
+
+                <!-- 동적 네이버 지도 -->
                 <div id="map-container" style="width:100%;height:400px;"></div>
+
+                <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uf5u3idq5s"></script>
                 <script>
-                  var mapOptions = {
-                    center: new naver.maps.LatLng(37.507098, 126.890270),
-                    zoom: 16
-                  };
+                    var mapOptions = {
+                        center: new naver.maps.LatLng(37.507098, 126.890270), // 지도 중심 좌표
+                        zoom: 16
+                    };
                 
-                  var map = new naver.maps.Map('map-container', mapOptions);
+                    var map = new naver.maps.Map('map-container', mapOptions);
+                
+                    // 마커 추가
+                    var marker = new naver.maps.Marker({
+                        position: new naver.maps.LatLng(37.507098, 126.890270),
+                        map: map
+                    });
+                
+                    // 마커 위에 표시할 텍스트 (Custom Overlay 사용)
+                    var label = new naver.maps.CustomOverlay({
+                        position: new naver.maps.LatLng(37.507098, 126.890270), // 마커 위치와 동일
+                        content: `
+                            <div style="
+                                background: white;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                                border: 1px solid #ddd;
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #333;
+                                text-align: center;
+                                white-space: nowrap;
+                                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                                transform: translate(-50%, -100%);
+                            ">
+                                웨스턴베니비스 신도림
+                            </div>
+                        `,
+                        map: map
+                    });
                 </script>
+                
                 
 
                 <!-- 네이버 맵 버튼 -->
