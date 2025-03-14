@@ -6,7 +6,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9); /* 조금 투명한 흰색 배경 */
+    background-color: rgba(255, 255, 255, 0.85); /* 조금 투명한 흰색 배경 */
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -15,6 +15,8 @@
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
     font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
+    word-wrap: break-word; /* 긴 단어가 끊어져서 줄 바꿈되도록 설정 */
+    line-height: 1.6; /* 줄 간격을 조금 더 넓혀서 가독성 향상 */
 }
 
 
@@ -75,7 +77,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #F5F5DC;
     padding: 50px;
 }
 
@@ -92,6 +95,14 @@ iframe {
 }
 
 /* <div class="weddinghall-map" id="naverMapLink"> 클래스 */
+#map h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333; /* 글씨 색상 */
+    text-align: center; /* 중앙 정렬 */
+    margin-bottom: 15px; /* 지도와 버튼 사이 여백 */
+}
+
 .map-buttons {
     display: flex;
     justify-content: center; /* 중앙 정렬 */
