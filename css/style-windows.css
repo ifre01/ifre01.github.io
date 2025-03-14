@@ -35,7 +35,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* 배경을 흰색으로 */
+    /*background-color: #ffffff; /* 배경을 흰색으로 */
+    background-color: #F5F5DC;
     overflow: hidden;
     z-index: 1000; /* 다른 요소들 위에 오도록 설정 */
     opacity: 0;
