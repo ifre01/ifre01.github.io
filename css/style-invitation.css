@@ -44,6 +44,7 @@
     background-color: rgba(255, 255, 255, 0.85); /* 연한 배경색 추가 */
     border-radius: 12px; /* 부드러운 모서리 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 은은한 그림자 효과 */
+    word-wrap: break-word; /* 긴 단어가 끊어져서 줄 바꿈되도록 설정 */
 }
 
 
