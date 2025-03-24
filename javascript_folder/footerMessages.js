@@ -23,22 +23,34 @@ function addMessage() {
     document.getElementById("message").value = "";
 }
 
-// 메시지 표시
+// 메시지 표시 (테이블 형식)
 function displayMessages() {
-    const messageList = document.getElementById("message-list");
-    if (!messageList) return; // 해당 요소가 없으면 함수 종료
-    
-    messageList.innerHTML = "";
+    const messageTable = document.getElementById("message-table");
+    if (!messageTable) return; // 테이블이 없으면 종료
+
     let messages = JSON.parse(localStorage.getItem("messages")) || [];
 
+    // 테이블 초기화 (헤더 제외)
+    messageTable.innerHTML = `
+        <tr>
+            <th>이름</th>
+            <th>메시지</th>
+            <th>삭제</th>
+        </tr>
+    `;
+
     messages.forEach((msg, index) => {
-        const div = document.createElement("div");
-        div.classList.add("message");
-        div.innerHTML = `
-            ${msg} 
-            <button class="delete-btn" onclick="deleteMessage(${index})">삭제</button>
-        `;
-        messageList.appendChild(div);
+        const row = messageTable.insertRow(-1); // 새 행 추가
+        row.insertCell(0).textContent = msg.name; // 이름
+        row.insertCell(1).textContent = msg.message; // 메시지
+        
+        // 삭제 버튼 추가
+        const deleteCell = row.insertCell(2);
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "삭제";
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.onclick = () => deleteMessage(index);
+        deleteCell.appendChild(deleteBtn);
     });
 
     toggleAdminView();
