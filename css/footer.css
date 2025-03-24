@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+footer {
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #ddd;
+}
+.footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+input, button {
+    margin: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+.message-container {
+    text-align: left;
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto; /* 스크롤 가능 */
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.message {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+.delete-btn {
+    display: none; /* 기본적으로 숨김 (관리자만 보이게) */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+footer p {
+    margin: 0; /* 기본 마진 제거 */
+}
+
+/* 반응형 스타일 */
+/* #gallery 반응형 스타일: 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 0 30px; /* 태블릿 & 모바일에서 좌우 여백 30px */
+    }
+}
+
+/* 반응형: 화면 너비가 480px 이하일 때 */
+@media (max-width: 480px) {
+    #gallery {
+        padding: 0 15px; /* 모바일에서 좌우 여백 15px */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        width: 100%;
+    }
+    .slide img {
+        border-radius: 0;
+    }
+}

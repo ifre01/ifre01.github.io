@@ -2,11 +2,14 @@
 
 /* 초대장 내용 */
 .invitation-content {
+    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.85); /* 조금 투명한 흰색 배경 */
+    /*background-color: rgba(255, 255, 255, 0.85); /* 조금 투명한 흰색 배경 */
+    background-color: #ffffff; /* 순백색 배경 */
+    color: #333333; /* 다크 그레이 텍스트 */
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -29,6 +32,13 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .invitation-content {
+        padding: 20px;
+        font-size: 16px;
+    }
 }
 
 .invitation-text {
@@ -264,26 +274,3 @@ iframe {
         border-radius: 0;
     }
 }
-/*
-h1, h2 {
-    color: #333;
-}
-*/
-
-footer {
-    background-color: #fff; /* 기본 배경색 설정 */
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* 중앙 정렬을 위한 추가 스타일 */
-    background-image: url('images/rectangle.jpg'); /* 이미지 파일의 경로를 정확하게 지정해야 합니다. */
-    background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정합니다. */
-    background-position: center; /* 이미지를 가운데 정렬합니다. */
-    background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정합니다. */
-}
-
-footer p {
-    margin: 0; /* 기본 마진 제거 */
-}
-

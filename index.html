@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style-invitation.css">
     <link rel="stylesheet" href="./css/style-windows.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <title>명한 결혼식</title>
 
@@ -46,7 +47,7 @@
             <p>우리의 특별한 날에 함께해 주세요.</p>
             <p>스크롤을 내려 초청장을 확인하세요.</p>
             <p>📅 날짜: 2025년 07월 05일 13:20 PM </p>
-            <p>📍 장소: <a href="https://naver.me/53lK4SBz" target="_blank">웨스턴베니비스 신도림 OO홀</a></p>
+            <p>📍 장소: <a href="https://naver.me/53lK4SBz" target="_blank">웨스턴베니비스 신도림 아스타홀</a></p>
                 <div id="countdown">
                     <script src="./javascript_folder/countdown_script.js"></script>
                 </div>
@@ -197,7 +198,19 @@
     </div>
 
     <footer>
-        <p>© 2025 Our Wedding</p>
+        <div class="footer-content">
+            <p>💌 우리에게 축하 메시지를 남겨주세요! 💌</p>
+            <input type="text" id="name" placeholder="이름 입력">
+            <input type="text" id="message" placeholder="축하 메시지 입력">
+            <button onclick="addMessage()">등록</button>
+    
+            <div class="message-container" id="message-list">
+                <!-- 축하 메시지가 여기에 추가됨 -->
+            </div>
+    
+            <button onclick="toggleAdmin()" id="admin-btn">🔑 관리자 모드</button>
+        </div>
+        <script src="/javascript_folder/footerMessages.js"></script>
     </footer>
 </body>
 </html>
