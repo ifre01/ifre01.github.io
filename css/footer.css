@@ -6,15 +6,18 @@ footer {
     text-align: center;
     border-top: 2px solid #ddd;
 }
+
 .footer-content {
     max-width: 500px;
     margin: 0 auto;
 }
+
 input, button {
     margin: 5px;
     padding: 8px;
     font-size: 14px;
 }
+
 .message-container {
     text-align: left;
     margin-top: 15px;
@@ -25,10 +28,38 @@ input, button {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* 표 스타일 */
+#message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Gowun Batang', serif;
+}
+
+#message-table th,
+#message-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* 열 구분선 */
+}
+
+#message-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+#message-table td {
+    background-color: #ffffff;
+}
+
+/* 메시지 항목 스타일 */
 .message {
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }
+
 .delete-btn {
     display: none; /* 기본적으로 숨김 (관리자만 보이게) */
     background-color: red;
@@ -39,38 +70,31 @@ input, button {
     float: right;
 }
 
-footer p {
-    margin: 0; /* 기본 마진 제거 */
+/* 관리자 모드에서 삭제 버튼 표시 */
+.delete-btn {
+    display: inline-block;
 }
 
 /* 반응형 스타일 */
-/* #gallery 반응형 스타일: 화면 너비가 768px 이하일 때 */
 @media (max-width: 768px) {
-    #gallery {
-        padding: 0 30px; /* 태블릿 & 모바일에서 좌우 여백 30px */
-    }
-}
-
-/* 반응형: 화면 너비가 480px 이하일 때 */
-@media (max-width: 480px) {
-    #gallery {
-        padding: 0 15px; /* 모바일에서 좌우 여백 15px */
-    }
-}
-
-
-
-@media (max-width: 768px) {
-    .slider {
-        width: 100%;
+    .footer-content {
+        padding: 0 20px; /* 모바일에서 좌우 여백 */
     }
 }
 
 @media (max-width: 480px) {
-    .slider {
-        width: 100%;
+    .footer-content {
+        padding: 0 10px; /* 모바일에서 좌우 여백 */
     }
-    .slide img {
-        border-radius: 0;
-    }
+}
+
+/* 삭제 버튼에 마우스 올리면 효과 */
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
