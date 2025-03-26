@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(to right, #f8c8d8, #a8d0e6); /* 파스텔 핑크에서 파스텔 블루로 그라데이션 */
+    /* background: linear-gradient(to right, #f8c8d8, #a8d0e6); /* 파스텔 핑크에서 파스텔 블루로 그라데이션 */
     font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
 }
 
@@ -94,10 +95,10 @@
     }
 
     .intro h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .intro p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }
