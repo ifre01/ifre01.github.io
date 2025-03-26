@@ -67,7 +67,7 @@
                 우리는 1,000일이라는 시간 동안 서로의 인생에 스며들었습니다.
                 <br><br>
                 처음 만났을 때부터 마치 오래전부터 알던 사람처럼 마음이 편안했고,  
-                함께하는 모든 순간이 운명처럼 느껴졌습니다.
+                함께하는 모든 순간이 운명처럼 느껴졌습니다.  
                 <br><br>
                 서로의 작은 습관까지 닮아가며,  
                 웃음과 사랑으로 가득한 추억을 하나씩 쌓아왔습니다.  
@@ -203,13 +203,14 @@
             <input type="text" id="name" placeholder="이름 입력">
             <input type="text" id="message" placeholder="축하 메시지 입력">
             <button onclick="addMessage()">등록</button>
-    
+            <button onclick="toggleAdmin()" id="admin-btn">🔑 관리자 모드</button>
+            
             <!-- 테이블을 감싸는 컨테이너 -->
             <div id="message-container">
                 <!-- JavaScript에서 테이블을 동적으로 추가 -->
             </div>
     
-            <button onclick="toggleAdmin()" id="admin-btn">🔑 관리자 모드</button>
+            <!-- <button onclick="toggleAdmin()" id="admin-btn">🔑 관리자 모드</button> -->
         </div>
 
         <script src="./javascript_folder/footerMessages.js"></script>
