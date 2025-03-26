@@ -57,6 +57,21 @@
     word-wrap: break-word; /* 긴 단어가 끊어져서 줄 바꿈되도록 설정 */
 }
 
+/* .invitation-text 반응형 스타일  */
+/* # 반응형 스타일: 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .invitation-text {
+        width: 90%;
+    }
+}
+
+/* 반응형: 화면 너비가 480px 이하일 때 */
+@media (max-width: 480px) {
+    .invitation-text {
+        width: 90%; /*padding: 0 15px; /* 모바일에서 좌우 여백 15px */
+    }
+}
+
 
 /* 스크롤 시 창문 열리는 효과 */
 .full-screen-wrapper.open .full-window-left {
