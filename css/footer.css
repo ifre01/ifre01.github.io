@@ -38,9 +38,6 @@ footer {
     margin-bottom: 8px; /* 입력란 간 간격 */
 }
 
-#name {
-    margin-left: 45px; /* '이름 입력'란을 '축하 메시지 입력'과 같은 시작 위치로 이동 */
-}
 
 .input-container button {
     margin-top: 10px;
