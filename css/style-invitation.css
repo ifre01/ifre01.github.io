@@ -231,6 +231,17 @@ iframe {
     border-radius: 10px 10px 0 0;
 }
 
+/* 슬라이드 안의 동영상 스타일 */
+.slide video {
+    width: 100%;           /* 슬라이드 너비에 맞춤 */
+    height: auto;          /* 비율 유지하면서 자동 조절 */
+    max-height: 400px;     /* 너무 커지지 않게 제한 */
+    border-radius: 10px;   /* 둥글게 */
+    object-fit: contain;   /* 영상 비율 유지하면서 가운데 정렬 */
+    background-color: black; /* 로딩 중일 때 검정 배경 */
+}
+
+
 /* 이전/다음 버튼의 위치와 스타일을 설정합니다. */
 .navigation {
     display: flex;
