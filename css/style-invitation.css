@@ -239,6 +239,7 @@ iframe {
     border-radius: 10px;   /* 둥글게 */
     object-fit: contain;   /* 영상 비율 유지하면서 가운데 정렬 */
     background-color: black; /* 로딩 중일 때 검정 배경 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 추가 */
 }
 
 
