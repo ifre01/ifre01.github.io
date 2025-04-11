@@ -47,6 +47,8 @@ updatePageNumber();
 // 3️. 모바일 터치 이벤트 (스와이프 기능)
 // (1) handleTouchStart(event) - 터치 시작
 function handleTouchStart(event) {
+    // ✅ 여기에 이 조건을 넣어주세요!
+    if (event.target.tagName === 'VIDEO') return;
     startX = event.touches[0].clientX;
 }
 /*
@@ -57,6 +59,7 @@ function handleTouchStart(event) {
 
 // (2) handleTouchMove(event) - 터치 중
 function handleTouchMove(event) {
+    if (event.target.tagName === 'VIDEO') return;
     endX = event.touches[0].clientX;
 }
 /*
@@ -67,6 +70,7 @@ function handleTouchMove(event) {
 
 // (3) handleTouchEnd() - 터치 종료
 function handleTouchEnd() {
+    if (event.target.tagName === 'VIDEO') return;
     if (startX > endX + 30) { // 30px 이동하면 반응 
         showSlide(currentIndex + 1); // 오른쪽으로 스와이프 → 다음 슬라이드
     } else if (startX < endX - 50) {
