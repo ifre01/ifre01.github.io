@@ -24,6 +24,13 @@
     margin: 10px 0;
     color: #333333; /* 다크 그레이, 시인성 높음 */
     line-height: 1.6; /* 가독성 향상 */
+    /* cursor에서 수정함 */
+    word-break: keep-all; /* 한글 단어 단위로 줄바꿈 */
+    white-space: pre-wrap; /* 줄바꿈 보존 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 100%;              /* 너비 설정 */
+    max-width: 90%;          /* 최대 너비 제한 */
+    padding: 0 15px;         /* 좌우 여백 추가 */
 }
 
 /* 전체 창문 덮개 */
