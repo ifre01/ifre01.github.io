@@ -58,152 +58,149 @@
 
     <!-- style-invitation.css -->
     <div class="page-content">
-        <div class="div">
-            
-            <!-- 초청장 아래 추가 콘텐츠 -->
-            <section class="content-after">
-            <h2>📜 우리의 이야기</h2>
-                <p class="invitation-text">
-                우리는 1,000일이라는 시간 동안 서로의 인생에 스며들었습니다.
-                <br><br>
-                처음 만났을 때부터 마치 오래전부터 알던 사람처럼 마음이 편안했고,  
-                함께하는 모든 순간이 운명처럼 느껴졌습니다.  
-                <br><br>
-                서로의 작은 습관까지 닮아가며,  
-                웃음과 사랑으로 가득한 추억을 하나씩 쌓아왔습니다.  
-                <br><br>
-                이제 그 소중한 시간들을 영원으로 이어가려 합니다.<br>
-                앞으로도 더 많은 순간을 함께하며,
-                서로를 더 깊이 사랑하고,
-                평생을 함께할 추억을 만들어가겠습니다.
-                </p>
-            </section>
+        <!-- 초청장 아래 추가 콘텐츠 -->
+        <section class="content-after">
+        <h2>📜 우리의 이야기</h2>
+            <p class="invitation-text">
+            우리는 1,000일이라는 시간 동안 서로의 인생에 스며들었습니다.
+            <br><br>
+            처음 만났을 때부터 마치 오래전부터 알던 사람처럼 마음이 편안했고,  
+            함께하는 모든 순간이 운명처럼 느껴졌습니다.  
+            <br><br>
+            서로의 작은 습관까지 닮아가며,  
+            웃음과 사랑으로 가득한 추억을 하나씩 쌓아왔습니다.  
+            <br><br>
+            이제 그 소중한 시간들을 영원으로 이어가려 합니다.<br>
+            앞으로도 더 많은 순간을 함께하며,
+            서로를 더 깊이 사랑하고,
+            평생을 함께할 추억을 만들어가겠습니다.
+            </p>
+        </section>
 
-            <div class="weddinghall-map" id="map">
-                <h2>결혼식장 오시는 길</h2>
+        <div class="weddinghall-map" id="map">
+            <h2>결혼식장 오시는 길</h2>
 
-                <!-- 동적 네이버 지도 -->
-                <div id="map-container" style="width:100%;height:400px;"></div>
+            <!-- 동적 네이버 지도 -->
+            <div id="map-container" style="width:100%;height:400px;"></div>
 
-                <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uf5u3idq5s"></script>
-                <script>
-                    var WesternBennevis = {
-                        center: new naver.maps.LatLng(37.507098, 126.890270), // 지도 중심 좌표
-                        zoom: 17,
-                        minZoom: 8, //지도의 최소 줌 레벨
-                        zoomControl: true, //줌 컨트롤의 표시 여부
-                        zoomControlOptions: { //줌 컨트롤의 옵션
-                            position: naver.maps.Position.TOP_RIGHT
-                            }
-                    };
-                
-                    var map = new naver.maps.Map('map-container', WesternBennevis);
-                
-                    // 마커 추가
-                    var marker = new naver.maps.Marker({
-                        position: new naver.maps.LatLng(37.507098, 126.890270),
-                        map: map
-                    });
-                    
-                    // 📌 3. 정보창(Infowindow) 생성
-                    var contentString = [
-                        '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 260px; height: 60px; text-align: center;">',
-                        '   <p style="foint-size: 2rem; margin: 0; font-weight: bold;">웨스턴베니비스</p>',
-                        '   <p style="font-size: 0.8rem; margin: 0; font-weight: bold;">서울 구로구 새말로 97 신도림테크노마트 7층</p>',
-                        // '   <p style="font-size: 0.8rem; margin: 0;">아스타홀</p>',
-                        '   <p style="font-size: 0.8rem; margin: 0; font-weight: bold;">아스타홀</p>',
-                        '</div>'
-                    ].join('');
-                    
-                    // 🎨 정보창 스타일 지정
-                    var infowindow = new naver.maps.InfoWindow({
-                        content: contentString, // 위에서 만든 HTML 내용
-                        maxWidth: 250,
-                        height: 60,
-                        backgroundColor: "rgba(255, 255, 255, 0.3)", // ✅ 배경 반투명 적용 (80% 불투명)
-                        // borderColor: "black", // 테두리 색상
-                        borderColor: "#555555", // 테두리 색상 (파스텔 차콜: #555555)
-                        borderWidth: 2, // 테두리 두께
-                        borderRadius: "10px", // ✅ 테두리를 둥글게 만들기
-                        disableAnchor: true, // 말풍선 삼각형 제거
-                        textAlign: "center", // 텍스트 중앙 정렬
-                        margin: "auto", // 마진 자동 조정
-                        pixelOffset: new naver.maps.Point(0, -5) // 정보창 위치 조정 (마커 위로 이동)
-                    });
-                    
-                    // 📌 마커 클릭 시 정보창 열기/닫기
-                    naver.maps.Event.addListener(marker, "click", function(e) {
-                        if (infowindow.getMap()) { // 정보창이 열려 있으면
-                            infowindow.close(); // 닫기
-                        } else {
-                            infowindow.open(map, marker); // 마커 위에 정보창 열기
+            <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uf5u3idq5s"></script>
+            <script>
+                var WesternBennevis = {
+                    center: new naver.maps.LatLng(37.507098, 126.890270), // 지도 중심 좌표
+                    zoom: 17,
+                    minZoom: 8, //지도의 최소 줌 레벨
+                    zoomControl: true, //줌 컨트롤의 표시 여부
+                    zoomControlOptions: { //줌 컨트롤의 옵션
+                        position: naver.maps.Position.TOP_RIGHT
                         }
-                    });
-
-                    // 지도 로드 시 자동으로 정보창 열기
-                    infowindow.open(map, marker);
-                </script>
-                
-                
-
-                <!-- 지도 앱 버튼들 -->
-                <div class="map-buttons">
-                    <!-- 네이버 맵 버튼 -->
-                    <a id="naverMapLink" href="네이버 지도 링크">
-                        <div class="map-icon">
-                            <img src="./images/naver-map-logo.png" alt="네이버지도에서 보기">
-                            <p>네이버 맵</p>
-                        </div>
-                    </a>
-                
-                    <!-- 카카오맵 버튼 -->
-                    <a id="kakaoMapLink" href="카카오맵 링크">
-                        <div class="map-icon">
-                            <img src="./images/kakao-map-logo.png" alt="카카오맵으로 보기">
-                            <p>카카오 맵</p>
-                        </div>
-                    </a>
-                </div>
+                };
             
-                <!-- 네이버 & 카카오 맵 JavaScript 연결 -->
-                <script src="./javascript_folder/naver-map.js"></script>
-                <script src="./javascript_folder/kakao-map.js"></script>
-            </div>
+                var map = new naver.maps.Map('map-container', WesternBennevis);
+            
+                // 마커 추가
+                var marker = new naver.maps.Marker({
+                    position: new naver.maps.LatLng(37.507098, 126.890270),
+                    map: map
+                });
+                
+                // 📌 3. 정보창(Infowindow) 생성
+                var contentString = [
+                    '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 260px; height: 60px; text-align: center;">',
+                    '   <p style="foint-size: 2rem; margin: 0; font-weight: bold;">웨스턴베니비스</p>',
+                    '   <p style="font-size: 0.8rem; margin: 0; font-weight: bold;">서울 구로구 새말로 97 신도림테크노마트 7층</p>',
+                    // '   <p style="font-size: 0.8rem; margin: 0;">아스타홀</p>',
+                    '   <p style="font-size: 0.8rem; margin: 0; font-weight: bold;">아스타홀</p>',
+                    '</div>'
+                ].join('');
+                
+                // 🎨 정보창 스타일 지정
+                var infowindow = new naver.maps.InfoWindow({
+                    content: contentString, // 위에서 만든 HTML 내용
+                    maxWidth: 250,
+                    height: 60,
+                    backgroundColor: "rgba(255, 255, 255, 0.3)", // ✅ 배경 반투명 적용 (80% 불투명)
+                    // borderColor: "black", // 테두리 색상
+                    borderColor: "#555555", // 테두리 색상 (파스텔 차콜: #555555)
+                    borderWidth: 2, // 테두리 두께
+                    borderRadius: "10px", // ✅ 테두리를 둥글게 만들기
+                    disableAnchor: true, // 말풍선 삼각형 제거
+                    textAlign: "center", // 텍스트 중앙 정렬
+                    margin: "auto", // 마진 자동 조정
+                    pixelOffset: new naver.maps.Point(0, -5) // 정보창 위치 조정 (마커 위로 이동)
+                });
+                
+                // 📌 마커 클릭 시 정보창 열기/닫기
+                naver.maps.Event.addListener(marker, "click", function(e) {
+                    if (infowindow.getMap()) { // 정보창이 열려 있으면
+                        infowindow.close(); // 닫기
+                    } else {
+                        infowindow.open(map, marker); // 마커 위에 정보창 열기
+                    }
+                });
 
+                // 지도 로드 시 자동으로 정보창 열기
+                infowindow.open(map, marker);
+            </script>
+            
+            
 
-            <div class="ww-section" id="gallery">
-            <h2> 포토 갤러리</h2>
-                                
-                    <div class="slider">
-                        <div class="slides">
-                            <div class="slide"><img src="images/no1.png" alt="Image 1"></div>
-                            <div class="slide"><img src="images/no2.png" alt="Image 2"></div>
-                            <div class="slide"><img src="images/no3.png" alt="Image 3"></div>
-                            <div class="slide">
-                                <video
-                                  src="images/video1-fixed.mp4"
-                                  poster="images/video1-thumbnail.jpg"
-                                  controls
-                                  preload="metadata"
-                                  style="width: 100%; max-height: 400px; background: black; border-radius: 10px;"
-                                ></video>
-                            </div>
-                        </div>
-                        
-                        <div class="navigation">
-                            <button class="nav-button nav-button-left" onclick="showSlide(currentIndex - 1)">&#10094;</button>
-                            <span class="page-number" id="page-number">1/4</span> <!-- 페이지 번호 추가 -->
-                            <button class="nav-button nav-button-right" onclick="showSlide(currentIndex + 1)">&#10095;</button>
-                        </div>
-                        
+            <!-- 지도 앱 버튼들 -->
+            <div class="map-buttons">
+                <!-- 네이버 맵 버튼 -->
+                <a id="naverMapLink" href="네이버 지도 링크">
+                    <div class="map-icon">
+                        <img src="./images/naver-map-logo.png" alt="네이버지도에서 보기">
+                        <p>네이버 맵</p>
                     </div>
-                    <script src="./javascript_folder/image-slide_script.js"></script>
-
-
+                </a>
+            
+                <!-- 카카오맵 버튼 -->
+                <a id="kakaoMapLink" href="카카오맵 링크">
+                    <div class="map-icon">
+                        <img src="./images/kakao-map-logo.png" alt="카카오맵으로 보기">
+                        <p>카카오 맵</p>
+                    </div>
+                </a>
             </div>
+        
+            <!-- 네이버 & 카카오 맵 JavaScript 연결 -->
+            <script src="./javascript_folder/naver-map.js"></script>
+            <script src="./javascript_folder/kakao-map.js"></script>
+        </div>
+
+
+        <div class="ww-section" id="gallery">
+        <h2> 포토 갤러리</h2>
+                            
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="images/no1.png" alt="Image 1"></div>
+                        <div class="slide"><img src="images/no2.png" alt="Image 2"></div>
+                        <div class="slide"><img src="images/no3.png" alt="Image 3"></div>
+                        <div class="slide">
+                            <video
+                              src="images/video1-fixed.mp4"
+                              poster="images/video1-thumbnail.jpg"
+                              controls
+                              preload="metadata"
+                              style="width: 100%; max-height: 400px; background: black; border-radius: 10px;"
+                            ></video>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation">
+                        <button class="nav-button nav-button-left" onclick="showSlide(currentIndex - 1)">&#10094;</button>
+                        <span class="page-number" id="page-number">1/4</span> <!-- 페이지 번호 추가 -->
+                        <button class="nav-button nav-button-right" onclick="showSlide(currentIndex + 1)">&#10095;</button>
+                    </div>
+                    
+                </div>
+                <script src="./javascript_folder/image-slide_script.js"></script>
 
 
         </div>
+
+
     </div>
 
     <footer>

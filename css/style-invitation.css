@@ -73,7 +73,7 @@
     
     /* 요소를 화면에 배치 */
     max-width: 600px; /* 가독성을 위해 최대 너비 설정 */
-    margin: 20px auto; /* 상하는 20px 여백, 좌우는 자동 중앙 정렬 */
+    margin: 10px auto; /* 상하는 10px 여백, 좌우는 자동 중앙 정렬 */
     padding: 20px; /* 내부 여백 추가 */
 
     color: #4a4a4a; /* 부드러운 다크 그레이 컬러 */
@@ -133,14 +133,17 @@ body {
 
 /* 초청장 아래 추가 콘텐츠 */
 .content-after {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* background-color: #fff; */
+    justify-content: flex-start;  /* center에서 flex-start로 변경 */
     background-color: #F5F5DC;
-    padding: 50px;
+    padding: 30px 20px;  /* 패딩 값 수정 */
+}
+
+.content-after h2 {
+    margin-top: 0;  /* 상단 마진 제거 */
+    margin-bottom: 1.5rem;  /* 하단 여백 추가 */
 }
 
 .map-container {
@@ -334,5 +337,17 @@ iframe {
     }
     .slide img {
         border-radius: 0;
+    }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+    .content-after {
+        padding: 20px 15px;  /* 모바일에서 패딩 줄임 */
+    }
+
+    .invitation-text {
+        margin: 5px auto;  /* 모바일에서 마진 더 줄임 */
+        /* ... rest of existing code ... */
     }
 }
