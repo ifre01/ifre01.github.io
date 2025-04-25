@@ -19,10 +19,10 @@
     color: #333333; /* 다크 그레이, 시인성 높음 */
 }
 
-.intro p p2 {
+.intro p {
     font-size: 1.2rem;
     margin: 10px 0;
-    color: #333333; /* 다크 그레이, 시인성 높음 */
+    color: #333333;
     line-height: 1.6; /* 가독성 향상 */
     /* cursor에서 수정함 */
     word-break: keep-all; /* 한글 단어 단위로 줄바꿈 */
@@ -31,6 +31,10 @@
     width: 100%;              /* 너비 설정 */
     max-width: 90%;          /* 최대 너비 제한 */
     padding: 0 15px;         /* 좌우 여백 추가 */
+}
+
+.intro p.location {  /* 특별한 스타일이 필요한 경우 */
+    /* 추가 스타일 */
 }
 
 /* 전체 창문 덮개 */
@@ -106,6 +110,10 @@
     }
 
     .intro p {
-        font-size: 1.3rem;
+        /*font-size: 1.3rem; */
+        font-size: 1.1rem;     /* 모바일에서 글자 크기 약간 축소 */
+        line-height: 1.8;      /* 줄간격 살짝 늘림 */
+        letter-spacing: -0.3px; /* 자간 살짝 줄임 */
+        max-width: 85%;        /* 모바일에서 좌우 여백 더 확보 */
     }
 }
