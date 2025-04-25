@@ -133,12 +133,12 @@ body {
 
 /* 초청장 아래 추가 콘텐츠 */
 .content-after {
+    margin-top: 80vh;    /* 추가: full-screen-wrapper 바로 아래에 위치 */
+    padding: 20px;       /* 패딩 축소 */
+    background-color: #F5F5DC;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;  /* center에서 flex-start로 변경 */
-    background-color: #F5F5DC;
-    padding: 30px 20px;  /* 패딩 값 수정 */
 }
 
 .content-after h2 {
@@ -343,11 +343,12 @@ iframe {
 /* 모바일 최적화 */
 @media (max-width: 480px) {
     .content-after {
-        padding: 20px 15px;  /* 모바일에서 패딩 줄임 */
+        margin-top: 75vh;    /* 모바일에서 더 위로 */
+        padding: 15px;       /* 모바일에서 패딩 더 줄임 */
     }
 
     .invitation-text {
-        margin: 5px auto;  /* 모바일에서 마진 더 줄임 */
-        /* ... rest of existing code ... */
+        padding: 10px;       /* 모바일에서 패딩 더 줄임 */
+        width: 95%;         /* 너비 살짝 늘림 */
     }
 }
