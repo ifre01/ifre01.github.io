@@ -144,8 +144,8 @@ body {
     margin: 0;
     padding: 0;
     /* background-color: #cae2f0; */
-    background-color: #f8f8f8;
-    background:url
+    background-color: #F5F5DC;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 /* 초청장 아래 추가 콘텐츠 */
@@ -380,4 +380,16 @@ iframe {
         font-size: 1.3rem;
         letter-spacing: -0.3px;
     }
+}
+
+/* 페이지 콘텐츠 영역 */
+.page-content {
+    margin-top: -20px;  /* 음수 마진으로 위쪽 공백 제거 */
+    padding-top: 0;     /* 상단 패딩 제거 */
+    background-color: #F5F5DC;
+}
+
+/* 스크립트 태그가 공간을 차지하지 않도록 */
+script {
+    display: none;
 }
