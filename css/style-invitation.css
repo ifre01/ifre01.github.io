@@ -95,7 +95,7 @@
 /* 모바일 화면 최적화 */
 @media (max-width: 480px) {
     .content-after {
-        margin-top: 70vh;  /* 모바일에서 더 위로 */
+        margin-top: 40vh;  /* 모바일에서 더 위로 */
     }
 
     .content-after h2 {
@@ -150,9 +150,9 @@ body {
 
 /* 초청장 아래 추가 콘텐츠 */
 .content-after {
-    margin-top: 75vh;    /* full-screen-wrapper 높이와 동일하게 */
-    padding: 0;          /* 패딩 제거 */
-    background-color: #F5F5DC;  /* 배경색 통일 */
+    margin-top: 65vh;    /* full-screen-wrapper 높이와 동일하게 맞춤 */
+    padding: 0;
+    background-color: #F5F5DC;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,7 +366,7 @@ iframe {
 /* 모바일 최적화 */
 @media (max-width: 480px) {
     .content-after {
-        margin-top: 75vh;    /* 모바일에서 더 위로 */
+        margin-top: 60vh;    /* 모바일에서 더 위로 */
         padding: 15px;       /* 모바일에서 패딩 더 줄임 */
     }
 
