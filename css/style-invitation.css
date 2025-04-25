@@ -67,46 +67,55 @@
 }
 
 .invitation-text {
-    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
-    font-weight: 900; /* 너무 두껍지 않은 기본 굵기 */
-    font-size: 1.1rem; /* 기본 글씨 크기 설정 */
+    font-family: 'Gowun Batang', serif;
+    font-weight: 500;
+    font-size: 1.1rem;
     
-    /* 요소를 화면에 배치 */
-    max-width: 600px; /* 가독성을 위해 최대 너비 설정 */
-    margin: 10px auto; /* 상하는 10px 여백, 좌우는 자동 중앙 정렬 */
-    padding: 20px; /* 내부 여백 추가 */
-
-    color: #4a4a4a; /* 부드러운 다크 그레이 컬러 */
-    line-height: 1.8; /* 줄 간격 넉넉하게 설정하여 가독성 확보 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+    /* 텍스트 정렬 및 줄바꿈 설정 */
+    text-align: center;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: pre-line;
+    line-height: 2.2;
     
-    background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 배경 */
-    border-radius: 12px; /* 모서리를 둥글게 처리하여 부드러운 느낌 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 은은한 그림자 효과 추가 */
+    /* 레이아웃 설정 수정 */
+    width: calc(100% - 40px);  /* 전체 너비에서 좌우 20px씩 뺌 */
+    max-width: 600px;          /* 최대 너비 설정 */
+    margin: 0 20px;            /* 좌우 여백 20px로 설정 */
+    padding: 25px 15px;        /* 패딩 좌우 줄임 */
     
-    word-wrap: break-word; /* 긴 단어가 줄 바꿈되도록 설정 */
-    letter-spacing: -0.02em; /* 기본 자간 조정 (아이폰에서 자간 문제 방지) */
+    /* 디자인 */
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* 글자 간격 설정 */
+    letter-spacing: -0.02em;
 }
 
-/* 📱 태블릿 (768px 이하)에서 스타일 조정 */
-@media (max-width: 768px) {
-    .invitation-text {
-        width: 90%; /* 화면 가로 폭에 맞춰 너비 조정 */
-        font-size: 1rem; /* 태블릿에서는 글씨 크기 약간 줄이기 */
-        letter-spacing: -0.015em; /* 태블릿에서 자간 조정 (기본보다 살짝 좁게) */
-    }
-}
-
-/* 📱 작은 스마트폰 (480px 이하)에서 스타일 조정 */
+/* 모바일 화면 최적화 */
 @media (max-width: 480px) {
     .invitation-text {
-        width: 90%; /* 모바일에서도 동일하게 너비 90% 유지 */
-        font-size: 0.95rem; /* 작은 화면에서는 글씨 크기 더 줄이기 */
-        padding: 15px; /* 내부 여백을 줄여서 공간 확보 */
-        letter-spacing: -0.01em; /* 모바일에서 자간을 더 좁혀 가독성 향상 */
+        width: calc(100% - 30px);  /* 모바일에서는 좌우 15px씩 */
+        margin: 0 15px;            /* 모바일에서 여백 줄임 */
+        font-size: 1rem;
+        line-height: 2;
+        padding: 20px 10px;        /* 내부 패딩 줄임 */
+        letter-spacing: -0.3px;
     }
 }
 
+/* 태블릿 화면 최적화 */
+@media (min-width: 481px) and (max-width: 768px) {
+    .invitation-text {
+        width: calc(100% - 35px);  /* 태블릿에서는 좌우 17.5px씩 */
+        margin: 0 17.5px;
+        font-size: 1.05rem;
+        line-height: 2.1;
+        padding: 22px 12px;
+        letter-spacing: -0.25px;
+    }
+}
 
 /* 스크롤 시 창문 열리는 효과 */
 .full-screen-wrapper.open .full-window-left {
