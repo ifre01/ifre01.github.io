@@ -37,18 +37,17 @@
 
 /* 전체 창문 덮개 */
 .full-screen-wrapper {
-    position: absolute; /* fixed → absolute 로 변경 */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80vh;    /* 100vh에서 80vh로 수정 */
+    height: 75vh;    /* 높이를 더 줄임 */
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-color: #ffffff; /* 배경을 흰색으로 */
-    background-color: #F5F5DC;
+    background-color: #F5F5DC;  /* 전체 배경색을 베이지로 통일 */
     overflow: hidden;
-    z-index: 1000; /* 다른 요소들 위에 오도록 설정 */
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0s 0.5s;
@@ -116,7 +115,7 @@
     }
 
     .full-screen-wrapper {
-        height: 75vh;    /* 모바일에서는 더 작게 */
+        height: 70vh;    /* 모바일에서는 더 작게 */
     }
     
     .content-after {

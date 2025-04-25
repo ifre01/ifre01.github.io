@@ -82,12 +82,11 @@
     width: 85%;            /* 전체 너비의 85%로 제한 */
     max-width: 500px;      /* 최대 너비 제한 */
     margin: 0 auto;        /* 중앙 정렬 */
-    padding: 25px 20px;    /* 내부 여백 */
+    padding: 0 20px;    /* 좌우 패딩만 유지 */
     
     /* 디자인 */
-    background-color: #fff;  /* 흰색 배경 */
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background: none;
+    box-shadow: none;
     
     /* 글자 간격 설정 */
     letter-spacing: -0.5px;  /* 자간 줄임 */
@@ -95,16 +94,22 @@
 
 /* 모바일 화면 최적화 */
 @media (max-width: 480px) {
-    .invitation-text {
-        width: 90%;           /* 모바일에서는 너비 90%로 */
-        font-size: 1rem;
-        line-height: 1.7;
-        padding: 20px 15px;
-        letter-spacing: -0.3px;
+    .content-after {
+        margin-top: 70vh;  /* 모바일에서 더 위로 */
     }
-    
+
     .content-after h2 {
         font-size: 1.3rem;
+        margin: 5px 0 15px 0;  /* 모바일에서 여백 더 줄임 */
+        letter-spacing: -0.3px;
+    }
+
+    .invitation-text {
+        width: 90%;
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 0 15px;
+        letter-spacing: -0.3px;
     }
 }
 
@@ -145,17 +150,23 @@ body {
 
 /* 초청장 아래 추가 콘텐츠 */
 .content-after {
-    padding: 20px 0;  /* 상하 패딩만 적용 */
-    background-color: #F5F5DC;
+    margin-top: 75vh;    /* full-screen-wrapper 높이와 동일하게 */
+    padding: 0;          /* 패딩 제거 */
+    background-color: #F5F5DC;  /* 배경색 통일 */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .content-after h2 {
-    margin-bottom: 20px;
+    font-family: 'Gowun Batang', serif;
     font-size: 1.5rem;
     color: #333;
+    margin: 10px 0 20px 0;  /* 상단 여백 줄임 */
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    letter-spacing: -0.5px;
 }
 
 .map-container {
@@ -362,5 +373,11 @@ iframe {
     .invitation-text {
         padding: 10px;       /* 모바일에서 패딩 더 줄임 */
         width: 95%;         /* 너비 살짝 늘림 */
+    }
+
+    .content-after h2,
+    .story-title {
+        font-size: 1.3rem;
+        letter-spacing: -0.3px;
     }
 }
