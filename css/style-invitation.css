@@ -12,7 +12,6 @@
     transform: translate(-50%, -50%); /* 정확한 중앙 정렬을 위해 X, Y축 이동 */
 
     /* 배경색 설정 */
-    /* background-color: rgba(255, 255, 255, 0.85); /* 조금 투명한 흰색 배경 (주석 처리됨) */
     background-color: #ffffff; /* 순백색 배경 */
 
     /* 텍스트 스타일 */
@@ -23,9 +22,10 @@
     word-wrap: break-word; /* 긴 단어가 끊어져서 줄 바꿈되도록 설정 */
 
     /* 박스 디자인 */
+    max-width: 600px; /* 가독성을 위해 최대 너비 설정 */
+    margin: 20px auto; /* 상하는 20px 여백, 좌우는 자동 중앙 정렬 */
+    padding: 20px; /* 내부 여백 추가 */
     border-radius: 12px; /* 모서리를 둥글게 */
-    padding: 30px; /* 내부 여백 추가 */
-    max-width: 80%; /* 최대 너비 설정 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
 
     /* 투명도 효과 */
@@ -50,19 +50,18 @@
     margin: 10px 0;
 }
 
-/* .invitation-content 반응형 스타일  */
-/* # 반응형 스타일: 화면 너비가 768px 이하일 때 */
+/* 반응형 스타일 - 모바일 최적화 */
 @media (max-width: 768px) {
     .invitation-content {
-        padding: 20px;
-        font-size: 16px;
+        width: 95%;
+        padding: 30px;
     }
 }
 
-/* 반응형: 화면 너비가 480px 이하일 때 */
 @media (max-width: 480px) {
     .invitation-content {
-        width: 90%; /*padding: 0 15px; /* 모바일에서 좌우 여백 15px */
+        width: 95%;
+        padding: 20px;
     }
 }
 
