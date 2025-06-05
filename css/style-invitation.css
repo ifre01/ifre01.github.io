@@ -35,7 +35,13 @@
 
 .invitation-content h2 {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 5px; /* h2와 h3 사이의 간격을 줄임 */
+}
+
+.invitation-content h3 {
+    font-size: 1.2rem;
+    margin-top: 0; /* h3의 상단 여백 제거 */
+    margin-bottom: 15px; /* h3 아래 여백 유지 */
 }
 
 .invitation-content p {
