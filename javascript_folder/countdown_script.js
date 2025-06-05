@@ -1,5 +1,5 @@
 // 결혼식 날짜를 설정합니다. 형식: 년, 월(0-11), 일
-const weddingDate = new Date(2025, 7, 5, 13, 20, 0);  // 예: 2025년 7월 5일 오후 1시 20분
+const weddingDate = new Date(2025, 6, 5, 13, 20, 0);  // 2025년 7월 5일 오후 1시 20분
 
 function updateCountdown() {
     const now = new Date();
