@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@latest/nanumsquare.css');
 
 /* 초대장 내용 */
 .invitation-content {
-    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
+    font-family: 'NanumSquare', sans-serif; /* 나눔스퀘어 폰트 */
     font-weight: 900; /* 너무 두껍지 않은 기본 굵기 */
 
     /* 요소를 화면 중앙에 배치 */
@@ -18,7 +18,7 @@
     /* 텍스트 스타일 */
     color: #333333; /* 다크 그레이 텍스트 */
     text-align: center; /* 텍스트 중앙 정렬 */
-    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 (중복됨) */
+    font-family: 'NanumSquare', sans-serif; /* 나눔스퀘어 폰트 (중복됨) */
     line-height: 1.6; /* 줄 간격을 조금 더 넓혀서 가독성 향상 */
     word-wrap: break-word; /* 긴 단어가 끊어져서 줄 바꿈되도록 설정 */
 
@@ -67,7 +67,7 @@
 }
 
 .invitation-text {
-    font-family: 'Gowun Batang', serif; /* 감성적인 한글 폰트 */
+    font-family: 'NanumSquare', sans-serif; /* 나눔스퀘어 폰트 */
     font-weight: 900; /* 너무 두껍지 않은 기본 굵기 */
     font-size: 1.1rem; /* 기본 글씨 크기 설정 */
     
@@ -122,8 +122,7 @@
 }
 
 body {
-    /* font-family: 'NanumSquare', sans-serif; */
-    font-family: 'Gowun Batang', serif;
+    font-family: 'NanumSquare', sans-serif;
     margin: 0;
     padding: 0;
     /* background-color: #cae2f0; */
